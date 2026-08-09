@@ -75,9 +75,14 @@ export async function POST(request: NextRequest) {
   } catch (error: unknown) {
     console.error("Register error:", error);
 
+    const message = error instanceof Error ? error.message : "Server error";
+
     return NextResponse.json(
       {
-        message: "Server error",
+        message:
+          message === "MONGODB_URI is not defined"
+            ? "Database is not configured on the server"
+            : "Server error",
       },
       {
         status: 500,
