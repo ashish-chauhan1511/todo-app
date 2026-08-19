@@ -366,7 +366,4 @@
   .home__actions {
     flex-direction: column;
   }
-  .home__login-btn, .home__register-btn {
-    width: 100%;
-  }
 }/*# sourceMappingURL=globals.css.map */
